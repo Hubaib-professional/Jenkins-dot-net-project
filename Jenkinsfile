@@ -17,14 +17,12 @@ pipeline {
             }
         }
         
-       stage('Restore') {
-    steps {
-        echo '📦 Restoring NuGet packages...'
-        dir('src') {  // Changes to the 'src' subdirectory
-            bat 'dotnet restore'
+        stage('Restore') {
+            steps {
+                echo '📦 Restoring NuGet packages...'
+                bat 'dotnet restore'
+            }
         }
-    }
-}
         
         stage('Build') {
             steps {
